@@ -67,7 +67,7 @@ export default function Home(): JSX.Element {
 							Font-size Clamp Generator
 						</Text>
 						<Text mt={0.5}>
-							Generate linearly scale font-size with clam()
+							Generate linearly scale font-size with clamp()
 						</Text>
 					</header>
 					<main>

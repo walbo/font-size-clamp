@@ -126,7 +126,7 @@ export default function Home(): JSX.Element {
 							</SettingsRow>
 						</Settings>
 
-						{clamp && <Code>font-size: {clamp};</Code>}
+						<Code>{clamp ? `font-size: ${clamp};` : ' '}</Code>
 					</main>
 				</FlexBlock>
 			</App>

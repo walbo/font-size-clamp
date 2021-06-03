@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://clamp.font-size.app
+
+# Sitemaps
+Sitemap: https://clamp.font-size.app/sitemap.xml

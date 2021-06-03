@@ -29,7 +29,7 @@ const SettingsRow = styled(Flex)`
 
 const Settings = styled.div`
 	max-width: 728px;
-	margin: clamp(3rem, 1.75rem + 4vw, 4rem) auto;
+	margin: clamp(3rem, 0.5rem + 8vw, 4rem) auto;
 `;
 
 export default function Home(): JSX.Element {

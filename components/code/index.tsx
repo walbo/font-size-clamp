@@ -7,7 +7,7 @@ export default styled.pre`
 	background: ${({ theme }) => theme.colors.background100};
 	font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
 		'Courier New', monospace;
-	font-size: clamp(0.75rem, 0.4375rem + 1vw, 1rem);
+	font-size: clamp(0.75rem, 0.125rem + 2vw, 1rem);
 	max-width: 728px;
 	margin: 0 auto;
 	padding: 1rem;

@@ -88,7 +88,7 @@ export default function Home(): JSX.Element {
 								<FlexBlock>
 									<Input
 										id="max-width"
-										label="Maximum font size"
+										label="Maximum viewport width"
 										value={config.maxWidth}
 										type="number"
 										onChange={(value) =>

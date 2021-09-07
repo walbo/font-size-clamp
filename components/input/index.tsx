@@ -8,19 +8,29 @@ import { useState, forwardRef } from 'react';
  */
 import InputBase from './input-base';
 import InputField from './input-field';
+import UnitSelectControl from './unit-select-control';
+import { parseUnit } from '@utils/units';
 
 type InputControlProps = Omit<
 	React.ComponentPropsWithRef<'input'>,
 	'onChange'
 > & {
+	value: string;
 	label: string;
-	suffix?: React.ReactNode;
 	onChange: (value: string) => void;
 };
 
 const ForwardedInputControl = forwardRef<HTMLInputElement, InputControlProps>(
-	function InputControl({ id, label, suffix, value, ...props }, ref) {
+	function InputControl({ id, label, value, onChange, ...props }, ref) {
+		const [num, unit, step] = parseUnit(value);
 		const [isFocused, setIsFocused] = useState(false);
+
+		const inputSuffix = (
+			<UnitSelectControl
+				onChange={(newUnit) => onChange(`${num}${newUnit}`)}
+				value={unit}
+			/>
+		);
 
 		return (
 			<InputBase
@@ -29,14 +39,17 @@ const ForwardedInputControl = forwardRef<HTMLInputElement, InputControlProps>(
 				isFocused={isFocused}
 				justify="left"
 				label={label}
-				suffix={suffix}
+				suffix={inputSuffix}
 			>
 				<InputField
 					{...props}
+					onChange={onChange}
 					id={id}
 					ref={ref}
 					setIsFocused={setIsFocused}
-					value={value}
+					value={num}
+					unit={unit}
+					step={step}
 				/>
 			</InputBase>
 		);

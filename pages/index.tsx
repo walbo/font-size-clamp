@@ -35,10 +35,10 @@ const Settings = styled.div`
 export default function Home(): JSX.Element {
 	const [config, setConfig] = useState({
 		root: '16',
-		minWidth: '500',
-		maxWidth: '900',
-		minFontSize: '1',
-		maxFontSize: '3',
+		minWidth: '500px',
+		maxWidth: '900px',
+		minFontSize: '16px',
+		maxFontSize: '48px',
 	});
 
 	function handleChange(prop: string, value: string) {
@@ -82,7 +82,6 @@ export default function Home(): JSX.Element {
 										onChange={(value) =>
 											handleChange('minWidth', value)
 										}
-										suffix="PX"
 									/>
 								</FlexBlock>
 								<FlexBlock>
@@ -94,7 +93,6 @@ export default function Home(): JSX.Element {
 										onChange={(value) =>
 											handleChange('maxWidth', value)
 										}
-										suffix="PX"
 									/>
 								</FlexBlock>
 							</SettingsRow>
@@ -108,7 +106,6 @@ export default function Home(): JSX.Element {
 										onChange={(value) =>
 											handleChange('minFontSize', value)
 										}
-										suffix="REM"
 									/>
 								</FlexBlock>
 								<FlexBlock>
@@ -120,7 +117,6 @@ export default function Home(): JSX.Element {
 										onChange={(value) =>
 											handleChange('maxFontSize', value)
 										}
-										suffix="REM"
 									/>
 								</FlexBlock>
 							</SettingsRow>

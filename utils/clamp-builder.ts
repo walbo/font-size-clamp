@@ -1,3 +1,18 @@
+/**
+ * Internal dependencies
+ */
+import { parseUnit } from './units';
+
+function convertToRem(value: string, root: number): number {
+	const [num, unit] = parseUnit(value);
+
+	if (unit === 'rem') {
+		return parseFloat(num);
+	}
+
+	return parseFloat(num) / root;
+}
+
 function toFixed(value: number) {
 	return parseFloat(value.toFixed(4));
 }
@@ -12,15 +27,16 @@ export default function clampBuilder(options: {
 	if (Object.values(options).some((value) => !value)) {
 		return '';
 	}
-
-	const minWidthPx = parseFloat(options.minWidth);
-	const maxWidthPx = parseFloat(options.maxWidth);
-	const minFontSize = parseFloat(options.minFontSize);
-	const maxFontSize = parseFloat(options.maxFontSize);
 	const root = parseInt(options.root, 10);
 
-	const minWidth = minWidthPx / root;
-	const maxWidth = maxWidthPx / root;
+	const minFontSize = convertToRem(options.minFontSize, root);
+	const maxFontSize = convertToRem(options.maxFontSize, root);
+	const minWidth = convertToRem(options.minWidth, root);
+	const maxWidth = convertToRem(options.maxWidth, root);
+
+	if ([minFontSize, maxFontSize, minWidth, maxWidth].some((v) => isNaN(v))) {
+		return '';
+	}
 
 	const slope = (maxFontSize - minFontSize) / (maxWidth - minWidth);
 	const yAxisIntersection = toFixed(-minWidth * slope + minFontSize);

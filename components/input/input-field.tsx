@@ -14,11 +14,12 @@ type InputFieldProps = Omit<
 > & {
 	setIsFocused: (isFocused: boolean) => void;
 	onChange?: (value: string) => void;
+	unit: string;
 };
 
 const ForwardedInputField = forwardRef<HTMLInputElement, InputFieldProps>(
 	function InputField(
-		{ onChange = () => null, setIsFocused, ...props },
+		{ onChange = () => null, setIsFocused, unit, ...props },
 		ref,
 	) {
 		const handleOnBlur = () => {
@@ -31,7 +32,7 @@ const ForwardedInputField = forwardRef<HTMLInputElement, InputFieldProps>(
 
 		const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 			const nextValue = event.target.value;
-			onChange(nextValue);
+			onChange(`${nextValue}${unit}`);
 		};
 
 		return (

@@ -109,15 +109,6 @@ class MyDocument extends Document {
 						content="/ms-icon-144x144.png"
 					/>
 					<meta name="theme-color" content="#ffffff" />
-					<script
-						async
-						src="https://www.googletagmanager.com/gtag/js?id=G-HFGCYQVS7W"
-					></script>
-					<script
-						dangerouslySetInnerHTML={{
-							__html: "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-HFGCYQVS7W');",
-						}}
-					/>
 				</Head>
 				<body>
 					<Main />

@@ -51,7 +51,7 @@ export default function Home(): JSX.Element {
 		const { config } = queryString.parse(window.location.search);
 
 		if (config && !Array.isArray(config)) {
-			let encoded = decodeURIComponent(config);
+			const encoded = decodeURIComponent(config);
 			try {
 				const buf = Buffer.from(encoded, 'base64').toString('binary');
 				setConfig(JSON.parse(buf));

@@ -27,7 +27,17 @@ const ForwardedInputControl = forwardRef<HTMLInputElement, InputControlProps>(
 
 		const inputSuffix = (
 			<UnitSelectControl
-				onChange={(newUnit) => onChange(`${num}${newUnit}`)}
+				onChange={(newUnit) => {
+					if (unit === 'px' && newUnit === 'rem') {
+						onChange(`${parseFloat(num) / 16}${newUnit}`);
+					} else if (unit === 'rem' && newUnit === 'px') {
+						onChange(
+							`${Math.round(parseFloat(num) * 16)}${newUnit}`,
+						);
+					} else {
+						onChange(`${num}${newUnit}`);
+					}
+				}}
 				value={unit}
 			/>
 		);

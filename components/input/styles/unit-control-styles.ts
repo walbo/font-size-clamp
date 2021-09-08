@@ -6,14 +6,13 @@ import styled from '@emotion/styled';
 export const UnitSelect = styled.select`
 	appearance: none;
 	background: transparent;
-	border-bottom-left-radius: 0;
-	border-radius: 0.125rem;
 	border: none;
-	color: #333;
+	border-radius: 0.125rem;
+	color: ${({ theme }) => theme.colors.foreground};
 	cursor: pointer;
 	display: block;
 	font-family: inherit;
-	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: 500;
 	height: 1.75rem;
 	line-height: 1;
@@ -28,6 +27,6 @@ export const UnitSelect = styled.select`
 
 	&:hover,
 	&:focus {
-		background-color: #f2f4f7;
+		background-color: ${({ theme }) => theme.colors.background100};
 	}
 `;

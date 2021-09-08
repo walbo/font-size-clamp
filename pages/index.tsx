@@ -34,15 +34,16 @@ const Settings = styled.div`
 `;
 
 const localStorageKey = 'clampFontSizeConfig';
+const initalConfig = {
+	root: '16',
+	minWidth: '500px',
+	maxWidth: '900px',
+	minFontSize: '16px',
+	maxFontSize: '48px',
+};
 
 export default function Home(): JSX.Element {
-	const [config, setConfig] = useState({
-		root: '16',
-		minWidth: '500px',
-		maxWidth: '900px',
-		minFontSize: '16px',
-		maxFontSize: '48px',
-	});
+	const [config, setConfig] = useState(initalConfig);
 
 	useEffect(() => {
 		const savedConfig = localStorage.getItem(localStorageKey);
@@ -51,10 +52,12 @@ export default function Home(): JSX.Element {
 			try {
 				const parsedConfig = JSON.parse(savedConfig);
 
-				if (hasSameKeys(parsedConfig, config)) {
+				if (hasSameKeys(parsedConfig, initalConfig)) {
 					setConfig(JSON.parse(savedConfig));
 				}
-			} catch {}
+			} catch {
+				// Skip if json parse failed.
+			}
 		}
 	}, []);
 

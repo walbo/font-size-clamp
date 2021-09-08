@@ -4,6 +4,7 @@
 import Head from 'next/head';
 import { useState, useMemo, useEffect } from 'react';
 import styled from '@emotion/styled';
+import queryString from 'query-string';
 
 /**
  * Internal dependencies
@@ -47,8 +48,17 @@ export default function Home(): JSX.Element {
 
 	useEffect(() => {
 		const savedConfig = localStorage.getItem(localStorageKey);
+		const { config } = queryString.parse(window.location.search);
 
-		if (savedConfig !== null) {
+		if (config && !Array.isArray(config)) {
+			let encoded = decodeURIComponent(config);
+			try {
+				const buf = Buffer.from(encoded, 'base64').toString('binary');
+				setConfig(JSON.parse(buf));
+			} catch {
+				// Do nothing
+			}
+		} else if (savedConfig !== null) {
 			try {
 				const parsedConfig = JSON.parse(savedConfig);
 
@@ -56,13 +66,19 @@ export default function Home(): JSX.Element {
 					setConfig(JSON.parse(savedConfig));
 				}
 			} catch {
-				// Skip if json parse failed.
+				// Do nothing
 			}
 		}
 	}, []);
 
 	useEffect(() => {
+		// Save in localstorage
 		localStorage.setItem(localStorageKey, JSON.stringify(config));
+
+		// Update url
+		const buf = Buffer.from(JSON.stringify(config), 'utf8');
+		const urlConfig = encodeURIComponent(buf.toString('base64'));
+		history.replaceState(null, '', `?config=${urlConfig}`);
 	}, [config]);
 
 	function handleChange(prop: string, value: string) {

@@ -20,7 +20,7 @@ const App = styled.main`
 	align-items: center;
 	display: flex;
 	min-height: calc(100vh - 4rem);
-	padding: 2rem 2rem 2rem;
+	padding: 2rem 2rem 1rem;
 	text-align: center;
 	width: 100%;
 `;

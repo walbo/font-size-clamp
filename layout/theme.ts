@@ -13,6 +13,7 @@ declare module '@emotion/react' {
 			background: string;
 			background100: string;
 			foreground: string;
+			foreground100: string;
 			border: string;
 			primary: string;
 		};
@@ -31,6 +32,7 @@ export const lightTheme: Theme = {
 		background: '#fff',
 		background100: '#f2f4f7',
 		foreground: '#333',
+		foreground100: '#c8cacc',
 		border: '#d8d8da',
 		primary: '#06f',
 	},
@@ -42,6 +44,7 @@ export const darkTheme: Theme = {
 		background: '#161b22',
 		background100: '#222830',
 		foreground: '#fff',
+		foreground100: '#595d65',
 		border: '#595d65',
 		primary: '#1e6eea',
 	},

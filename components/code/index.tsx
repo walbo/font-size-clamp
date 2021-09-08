@@ -1,9 +1,10 @@
 /**
  * External dependencies
  */
+import { useRef } from 'react';
 import styled from '@emotion/styled';
 
-export default styled.pre`
+const Pre = styled.pre`
 	background: ${({ theme }) => theme.colors.background100};
 	font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
 		'Courier New', monospace;
@@ -15,3 +16,25 @@ export default styled.pre`
 	text-align: center;
 	overflow: auto;
 `;
+
+function Code({
+	children,
+}: React.ComponentPropsWithoutRef<'span'>): JSX.Element {
+	const ref = useRef(null);
+
+	function handleOnClick() {
+		const selection = window.getSelection();
+
+		if (selection && ref.current) {
+			selection.selectAllChildren(ref.current);
+		}
+	}
+
+	return (
+		<Pre onClick={handleOnClick}>
+			<span ref={ref}>{children}</span>
+		</Pre>
+	);
+}
+
+export default Code;

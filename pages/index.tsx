@@ -2,7 +2,7 @@
  * External dependencies
  */
 import Head from 'next/head';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import styled from '@emotion/styled';
 
 /**
@@ -13,6 +13,7 @@ import Flex, { FlexBlock } from '@components/flex';
 import Text from '@components/text';
 import Code from '@components/code';
 import clampBuilder from '@utils/clamp-builder';
+import { hasSameKeys } from '@utils/objects';
 
 const App = styled.div`
 	align-items: center;
@@ -32,6 +33,8 @@ const Settings = styled.div`
 	margin: clamp(3rem, 0.5rem + 8vw, 4rem) auto;
 `;
 
+const localStorageKey = 'clampFontSizeConfig';
+
 export default function Home(): JSX.Element {
 	const [config, setConfig] = useState({
 		root: '16',
@@ -40,6 +43,24 @@ export default function Home(): JSX.Element {
 		minFontSize: '16px',
 		maxFontSize: '48px',
 	});
+
+	useEffect(() => {
+		const savedConfig = localStorage.getItem(localStorageKey);
+
+		if (savedConfig !== null) {
+			try {
+				const parsedConfig = JSON.parse(savedConfig);
+
+				if (hasSameKeys(parsedConfig, config)) {
+					setConfig(JSON.parse(savedConfig));
+				}
+			} catch {}
+		}
+	}, []);
+
+	useEffect(() => {
+		localStorage.setItem(localStorageKey, JSON.stringify(config));
+	}, [config]);
 
 	function handleChange(prop: string, value: string) {
 		setConfig((conf) => ({

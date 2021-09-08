@@ -8,6 +8,24 @@ export default function GlobalStyle({ theme }: { theme: Theme }): JSX.Element {
 	return (
 		<Global
 			styles={css`
+				:root {
+					--background: #fff;
+					--background100: #f2f4f7;
+					--foreground: #333;
+					--foreground100: #c8cacc;
+					--border: #d8d8da;
+					--primary: #06f;
+
+					@media (prefers-color-scheme: dark) {
+						--background: #161b22;
+						--background100: #222830;
+						--foreground: #fff;
+						--foreground100: #595d65;
+						--border: #595d65;
+						--primary: #1e6eea;
+					}
+				}
+
 				*,
 				*::after,
 				*::before {
@@ -15,8 +33,8 @@ export default function GlobalStyle({ theme }: { theme: Theme }): JSX.Element {
 				}
 
 				body {
-					background-color: ${theme.colors.background};
-					color: ${theme.colors.foreground};
+					background-color: var(--background);
+					color: var(--foreground);
 					margin: 0;
 					font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
 						Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue',

@@ -8,7 +8,7 @@ export const UnitSelect = styled.select`
 	background: transparent;
 	border: none;
 	border-radius: 0.125rem;
-	color: ${({ theme }) => theme.colors.foreground};
+	color: var(--foreground);
 	cursor: pointer;
 	display: block;
 	font-family: inherit;
@@ -27,6 +27,6 @@ export const UnitSelect = styled.select`
 
 	&:hover,
 	&:focus {
-		background-color: ${({ theme }) => theme.colors.background100};
+		background-color: var(--background100);
 	}
 `;

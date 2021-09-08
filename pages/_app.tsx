@@ -8,7 +8,7 @@ import Script from 'next/script';
 /**
  * Internal dependencies
  */
-import { lightTheme as theme } from '@layout/theme';
+import { baseTheme as theme } from '@layout/theme';
 import GlobalStyle from '@layout/global-style';
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {

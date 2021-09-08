@@ -32,11 +32,11 @@ const Footer = styled.footer`
 	align-items: center;
 
 	& a {
-		color: ${({ theme }) => theme.colors.foreground100};
+		color: var(--foreground100);
 		transition: color 100ms;
 
 		&:hover {
-			color: ${({ theme }) => theme.colors.foreground};
+			color: var(--foreground);
 		}
 	}
 

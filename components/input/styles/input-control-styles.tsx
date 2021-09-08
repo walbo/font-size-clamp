@@ -35,8 +35,8 @@ export const Root = styled(Flex)<RootProps>(
 );
 
 export const Container = styled.div(({ theme }) => ({
-	backgroundColor: theme.colors.background,
-	color: theme.colors.foreground,
+	backgroundColor: 'var(--background)',
+	color: 'var(--foreground)',
 	alignItems: 'center',
 	borderRadius: 'inherit',
 	display: 'flex',
@@ -46,10 +46,10 @@ export const Container = styled.div(({ theme }) => ({
 }));
 
 export const Input = styled.input(({ theme }) => ({
-	backgroundColor: theme.colors.background,
+	backgroundColor: 'var(--background)',
 	border: 'none',
 	boxShadow: 'none !important',
-	color: theme.colors.foreground,
+	color: 'var(--foreground)',
 	display: 'block',
 	margin: 0,
 	outline: 'none',
@@ -96,9 +96,7 @@ export const BackdropUI = styled.div<{
 		paddingLeft: 2,
 	},
 	({ isFocused, theme }) => {
-		const borderColor = isFocused
-			? theme.colors.primary
-			: theme.colors.border;
+		const borderColor = isFocused ? 'var(--primary)' : 'var(--border)';
 
 		return css({
 			borderColor,

@@ -6,7 +6,7 @@ import styled from '@emotion/styled';
 import copy from 'copy-text-to-clipboard';
 
 const Wrapper = styled.div`
-	background: ${({ theme }) => theme.colors.background100};
+	background: var(--background100);
 	max-width: 728px;
 	margin: 0 auto;
 	border-radius: 4px;

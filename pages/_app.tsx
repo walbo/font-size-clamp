@@ -30,7 +30,7 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 				`}
 			</Script>
 			<ThemeProvider theme={theme}>
-				<GlobalStyle theme={theme} />
+				<GlobalStyle />
 				<Component {...pageProps} />
 			</ThemeProvider>
 		</>

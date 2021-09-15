@@ -34,33 +34,33 @@ export const Root = styled(Flex)<RootProps>(
 	rootFocusedStyles,
 );
 
-export const Container = styled.div(({ theme }) => ({
-	backgroundColor: 'var(--background)',
-	color: 'var(--foreground)',
-	alignItems: 'center',
-	borderRadius: 'inherit',
-	display: 'flex',
-	flex: 1,
-	position: 'relative',
-	width: '100%',
-}));
+export const Container = styled.div`
+	align-items: center;
+	background-color: var(--background);
+	border-radius: inherit;
+	color: var(--foreground);
+	display: flex;
+	flex: 1;
+	position: relative;
+	width: 100%;
+`;
 
-export const Input = styled.input(({ theme }) => ({
-	backgroundColor: 'var(--background)',
-	border: 'none',
-	boxShadow: 'none !important',
-	color: 'var(--foreground)',
-	display: 'block',
-	margin: 0,
-	outline: 'none',
-	paddingLeft: '0.75rem',
-	paddingRight: '0.75rem',
-	width: '100%',
-	lineHeight: 1,
-	fontSize: '1rem',
-	height: '2.5rem',
-	fontFamily: 'inherit',
-}));
+export const Input = styled.input`
+	background-color: var(--background);
+	border: none;
+	box-shadow: none !important;
+	color: var(--foreground);
+	display: block;
+	font-family: inherit;
+	font-size: 1rem;
+	height: 2.5rem;
+	line-height: 1;
+	margin: 0;
+	outline: none;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	width: 100%;
+`;
 
 const BaseLabel = styled(Text)`
 	box-sizing: border-box;
@@ -95,7 +95,7 @@ export const BackdropUI = styled.div<{
 		position: 'absolute',
 		paddingLeft: 2,
 	},
-	({ isFocused, theme }) => {
+	({ isFocused }) => {
 		const borderColor = isFocused ? 'var(--primary)' : 'var(--border)';
 
 		return css({

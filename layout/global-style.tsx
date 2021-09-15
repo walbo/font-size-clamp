@@ -2,9 +2,8 @@
  * External dependencies
  */
 import { Global, css } from '@emotion/react';
-import type { Theme } from '@emotion/react';
 
-export default function GlobalStyle({ theme }: { theme: Theme }): JSX.Element {
+export default function GlobalStyle(): JSX.Element {
 	return (
 		<Global
 			styles={css`

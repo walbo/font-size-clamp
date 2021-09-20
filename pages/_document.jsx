@@ -108,7 +108,16 @@ class MyDocument extends Document {
 						name="msapplication-TileImage"
 						content="/ms-icon-144x144.png"
 					/>
-					<meta name="theme-color" content="#ffffff" />
+					<meta
+						name="theme-color"
+						media="(prefers-color-scheme: light)"
+						content="#ffffff"
+					/>
+					<meta
+						name="theme-color"
+						media="(prefers-color-scheme: dark)"
+						content="#161b22"
+					/>
 				</Head>
 				<body>
 					<Main />

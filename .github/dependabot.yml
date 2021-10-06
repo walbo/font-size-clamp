@@ -7,7 +7,6 @@ updates:
           timezone: Europe/Oslo
           time: '17:00'
       open-pull-requests-limit: 30
-      rebase-strategy: disabled
     - package-ecosystem: 'npm'
       directory: '/'
       schedule:
@@ -15,4 +14,3 @@ updates:
           timezone: Europe/Oslo
           time: '17:00'
       open-pull-requests-limit: 30
-      rebase-strategy: disabled

@@ -4,7 +4,6 @@
 import Head from 'next/head';
 import { useState, useMemo, useEffect } from 'react';
 import styled from '@emotion/styled';
-import queryString from 'query-string';
 
 /**
  * Internal dependencies
@@ -71,7 +70,8 @@ export default function Home(): JSX.Element {
 
 	useEffect(() => {
 		const savedConfig = localStorage.getItem(localStorageKey);
-		const { config } = queryString.parse(window.location.search);
+		const searchParams = new URLSearchParams(window.location.search);
+		const config = searchParams.get('config');
 
 		if (config && !Array.isArray(config)) {
 			const encoded = decodeURIComponent(config);

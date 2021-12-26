@@ -22,7 +22,7 @@
 	"devDependencies": {
 		"@babel/core": "7.16.5",
 		"@emotion/babel-plugin": "11.7.1",
-		"@types/react": "17.0.37",
+		"@types/react": "17.0.38",
 		"@typescript-eslint/eslint-plugin": "5.7.0",
 		"@typescript-eslint/parser": "5.7.0",
 		"eslint": "8.5.0",

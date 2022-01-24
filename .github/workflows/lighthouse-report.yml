@@ -14,6 +14,17 @@ jobs:
               with:
                   fetch-depth: 1
 
+            - name: Use Node.js 16.x
+              uses: actions/setup-node@v2.5.1
+              with:
+                  node-version: 16.x
+                  cache: npm
+
+            - name: Npm install and build
+              run: |
+                  npm ci
+                  npm run build
+
             - name: Audit using Lighthouse
               id: lighthouse_audit
               uses: treosh/lighthouse-ci-action@8.2.0

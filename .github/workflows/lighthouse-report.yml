@@ -44,7 +44,7 @@ jobs:
                       Object.keys(result).forEach(key => result[key] = formatResult(result[key]))
                       const score = res => res >= 90 ? '🟢' : res >= 50 ? '🟠' : '🔴'
                       const comment = [
-                          `⚡️ [Lighthouse report](${Object.values(links)[0]}) for the changes in this PR:`,
+                          `⚡️ [Lighthouse report](${Object.values(links)[1]}) for the changes in this PR:`,
                           '| Category | Score |',
                           '| --- | --- |',
                           `| ${score(result.performance)} Performance | ${result.performance} |`,
@@ -53,7 +53,7 @@ jobs:
                           `| ${score(result.seo)} SEO | ${result.seo} |`,
                           `| ${score(result.pwa)} PWA | ${result.pwa} |`,
                           ' ',
-                          `*Lighthouse ran on [${Object.keys(links)[0]}](${Object.keys(links)[0]})*`
+                          `*Lighthouse ran on ${Object.keys(links)[1]}*`
                       ].join('\n')
                        core.setOutput("comment", comment);
 

@@ -1,7 +1,8 @@
 {
 	"ci": {
 		"collect": {
-			"staticDistDir": "./out"
+			"staticDistDir": "./out",
+			"isSinglePageApplication": true
 		}
 	}
 }

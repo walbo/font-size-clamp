@@ -7,3 +7,4 @@ Host: https://clamp.font-size.app
 
 # Sitemaps
 Sitemap: https://clamp.font-size.app/sitemap.xml
+Sitemap: https://clamp.font-size.app/sitemap-0.xml

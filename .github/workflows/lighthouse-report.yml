@@ -2,8 +2,7 @@ name: Lighthouse Report
 
 on:
     pull_request:
-        branches:
-            - main
+        branches: [main]
 
 jobs:
     lighthouse-report:

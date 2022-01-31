@@ -58,6 +58,7 @@ jobs:
                        core.setOutput("comment", comment);
 
             - name: Add Lighthouse stats as comment
+              if: ${{ github.actor != 'dependabot[bot]' }}
               id: comment_to_pr
               uses: marocchino/sticky-pull-request-comment@v2.2.0
               with:

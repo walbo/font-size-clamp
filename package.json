@@ -4,14 +4,17 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
+		"prebuild": "npm run partytown",
 		"build": "next build",
 		"postbuild": "next-sitemap && next export",
 		"start": "next start",
 		"format": "prettier --write .",
 		"lint": "eslint . --ext .js,.ts,.tsx",
-		"tsc": "tsc --pretty --noEmit"
+		"tsc": "tsc --pretty --noEmit",
+		"partytown": "partytown copylib public/~partytown"
 	},
 	"dependencies": {
+		"@builder.io/partytown": "0.2.4",
 		"@emotion/react": "11.7.1",
 		"@emotion/styled": "11.6.0",
 		"copy-text-to-clipboard": "3.0.1",

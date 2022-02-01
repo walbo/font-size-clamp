@@ -4,4 +4,5 @@ out
 .next
 public/*.js
 public/robots.txt
-public/sitemap.xml
+public/sitemap*.xml
+public/~partytown

@@ -4,6 +4,7 @@
  * External dependencies
  */
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { GoogleTagManager, Partytown } from '@builder.io/partytown/react';
 
 class MyDocument extends Document {
 	static async getInitialProps(ctx) {
@@ -118,6 +119,8 @@ class MyDocument extends Document {
 						media="(prefers-color-scheme: dark)"
 						content="#161b22"
 					/>
+					<GoogleTagManager containerId="G-HFGCYQVS7W" />
+					<Partytown />
 				</Head>
 				<body>
 					<Main />

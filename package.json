@@ -7,6 +7,7 @@
 		"build": "next build",
 		"postbuild": "next-sitemap && next export",
 		"start": "next start",
+		"start:static": "serve out",
 		"format": "prettier --write .",
 		"lint": "eslint . --ext .js,.ts,.tsx",
 		"tsc": "tsc --pretty --noEmit"
@@ -22,6 +23,7 @@
 	"devDependencies": {
 		"@babel/core": "7.17.2",
 		"@emotion/babel-plugin": "11.7.2",
+		"@playwright/test": "^1.19.0",
 		"@types/react": "17.0.39",
 		"@typescript-eslint/eslint-plugin": "5.12.0",
 		"@typescript-eslint/parser": "5.12.0",
@@ -32,6 +34,7 @@
 		"next-pwa": "5.4.4",
 		"next-sitemap": "2.1.15",
 		"prettier": "2.5.1",
+		"serve": "13.0.2",
 		"typescript": "4.5.5"
 	}
 }

@@ -12,7 +12,7 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - name: Validate eslint json
-              uses: walbo/validate-json@v1.0.0
+              uses: walbo/validate-json@v1.0.1
               with:
                   files: .eslintrc.json, tsconfig.json
                   print-valid-files: true

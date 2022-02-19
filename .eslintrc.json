@@ -1,4 +1,5 @@
 {
+	"$schema": "https://json.schemastore.org/eslintrc",
 	"parser": "@typescript-eslint/parser",
 	"plugins": ["@typescript-eslint"],
 	"extends": [

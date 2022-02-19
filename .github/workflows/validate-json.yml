@@ -14,4 +14,6 @@ jobs:
             - name: Validate eslint json
               uses: walbo/validate-json@v1.0.0
               with:
-                  files: .eslintrc.json
+                  files:
+                      - .eslintrc.json
+                      - tsconfig.json

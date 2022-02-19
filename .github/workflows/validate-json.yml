@@ -1,0 +1,19 @@
+name: Validate JSON
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+    validate:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Validate JSON files
+              uses: walbo/validate-json@v1.0.2
+              with:
+                  files: .eslintrc.json, tsconfig.json
+                  print-valid-files: true
+                  strict: false

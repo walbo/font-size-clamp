@@ -13,7 +13,7 @@
 		"tsc": "tsc --pretty --noEmit"
 	},
 	"dependencies": {
-		"@emotion/react": "11.7.1",
+		"@emotion/react": "11.8.0",
 		"@emotion/styled": "11.8.0",
 		"copy-text-to-clipboard": "3.0.1",
 		"next": "12.1.0",

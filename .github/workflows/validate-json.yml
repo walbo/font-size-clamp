@@ -13,9 +13,9 @@ jobs:
             - uses: actions/checkout@v2
             - name: Validate eslint json
               uses: walbo/validate-json@v1.0.0
-              env:
+              with:
                   files: '.eslintrc.json'
             - name: Validate typescript json
               uses: walbo/validate-json@v1.0.0
-              env:
+              with:
                   files: 'tsconfig.json'

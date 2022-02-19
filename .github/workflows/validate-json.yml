@@ -16,3 +16,4 @@ jobs:
               with:
                   files: .eslintrc.json, tsconfig.json
                   print-valid-files: true
+                  strict: false

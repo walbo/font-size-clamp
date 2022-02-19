@@ -15,3 +15,4 @@ jobs:
               uses: walbo/validate-json@v1.0.0
               with:
                   files: .eslintrc.json, tsconfig.json
+                  print-valid-files: true

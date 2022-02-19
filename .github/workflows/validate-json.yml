@@ -11,9 +11,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - name: Validate JSON
+            - name: Validate eslint json
               uses: walbo/validate-json@v1.0.0
               env:
-                  files:
-                      - '.eslintrc.json'
-                      - 'tsconfig.json'
+                  files: .eslintrc.json
+            - name: Validate typescript json
+              uses: walbo/validate-json@v1.0.0
+              env:
+                  files: tsconfig.json

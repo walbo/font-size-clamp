@@ -6,6 +6,8 @@
 		"dev": "next dev",
 		"build": "next build",
 		"postbuild": "next-sitemap && next export",
+		"build:prod": "NEXT_PUBLIC_ANALYTICS_ID=G-HFGCYQVS7W next build",
+		"postbuild:prod": "next-sitemap && next export",
 		"start": "next start",
 		"start:static": "serve out",
 		"format": "prettier --write .",

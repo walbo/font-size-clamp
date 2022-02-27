@@ -14,21 +14,25 @@ import GlobalStyle from '@layout/global-style';
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 	return (
 		<>
-			<Script
-				id="gtag"
-				strategy="lazyOnload"
-				src="https://www.googletagmanager.com/gtag/js?id=G-HFGCYQVS7W"
-			/>
-			<Script id="gtag-setup" strategy="lazyOnload">
-				{`
-					window.dataLayer = window.dataLayer || [];
-					function gtag() {
-						dataLayer.push(arguments);
-					}
-					gtag('js', new Date());
-					gtag('config', 'G-HFGCYQVS7W');
-				`}
-			</Script>
+			{process.env.NEXT_PUBLIC_ANALYTICS_ID && (
+				<>
+					<Script
+						id="gtag"
+						strategy="lazyOnload"
+						src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_ANALYTICS_ID}`}
+					/>
+					<Script id="gtag-setup" strategy="lazyOnload">
+						{`
+							window.dataLayer = window.dataLayer || [];
+							function gtag() {
+								dataLayer.push(arguments);
+							}
+							gtag('js', new Date());
+							gtag('config', '${process.env.NEXT_PUBLIC_ANALYTICS_ID}');
+						`}
+					</Script>
+				</>
+			)}
 			<ThemeProvider theme={theme}>
 				<GlobalStyle />
 				<Component {...pageProps} />

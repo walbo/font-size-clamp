@@ -118,15 +118,17 @@ class MyDocument extends Document {
 						media="(prefers-color-scheme: dark)"
 						content="#161b22"
 					/>
+					{process.env.NEXT_PUBLIC_ANALYTICS_ID && (
+						<script
+							async
+							src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5116137489972754"
+							crossOrigin="anonymous"
+						></script>
+					)}
 				</Head>
 				<body>
 					<Main />
 					<NextScript />
-					<script
-						async
-						src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5116137489972754"
-						crossOrigin="anonymous"
-					></script>
 				</body>
 			</Html>
 		);

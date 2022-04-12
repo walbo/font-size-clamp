@@ -32,7 +32,7 @@
 		"eslint-config-next": "12.1.4",
 		"eslint-config-prettier": "8.5.0",
 		"eslint-plugin-react": "7.29.4",
-		"next-pwa": "5.4.6",
+		"next-pwa": "5.5.0",
 		"next-sitemap": "2.5.19",
 		"prettier": "2.6.2",
 		"serve": "13.0.2",

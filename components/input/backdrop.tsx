@@ -2,6 +2,7 @@
  * External dependencies
  */
 import { memo } from 'react';
+import type { FunctionComponent } from 'react';
 
 /**
  * Internal dependencies
@@ -12,7 +13,7 @@ type BackdropProps = {
 	isFocused?: boolean;
 };
 
-const Backdrop: React.FC<BackdropProps> = ({ isFocused = false }) => {
+const Backdrop: FunctionComponent<BackdropProps> = ({ isFocused = false }) => {
 	return <BackdropUI aria-hidden="true" isFocused={isFocused} />;
 };
 

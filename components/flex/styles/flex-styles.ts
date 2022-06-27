@@ -3,9 +3,10 @@
  */
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import type { ElementType } from 'react';
 
 type FlexProps = {
-	as?: React.ElementType;
+	as?: ElementType;
 	gap?: number;
 	isReversed?: boolean;
 	align: 'center' | 'top' | 'bottom';

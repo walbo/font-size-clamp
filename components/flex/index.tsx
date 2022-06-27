@@ -2,6 +2,7 @@
  * External dependencies
  */
 import { forwardRef } from 'react';
+import type { ReactNode, ElementType } from 'react';
 
 /**
  * Internal dependencies
@@ -9,12 +10,12 @@ import { forwardRef } from 'react';
 import { Flex as BaseFlex } from './styles/flex-styles';
 
 export type FlexProps = {
-	as?: React.ElementType;
+	as?: ElementType;
 	gap?: number;
 	isReversed?: boolean;
 	align?: 'center' | 'top' | 'bottom';
 	justify?: 'left' | 'right' | 'space-between' | 'center';
-	children: React.ReactNode;
+	children: ReactNode;
 };
 
 export { default as FlexBlock } from './block';

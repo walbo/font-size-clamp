@@ -2,6 +2,7 @@
  * External dependencies
  */
 import { useState, forwardRef } from 'react';
+import type { ComponentPropsWithRef } from 'react';
 
 /**
  * Internal dependencies
@@ -11,10 +12,7 @@ import InputField from './input-field';
 import UnitSelectControl from './unit-select-control';
 import { parseUnit } from '@utils/units';
 
-type InputControlProps = Omit<
-	React.ComponentPropsWithRef<'input'>,
-	'onChange'
-> & {
+type InputControlProps = Omit<ComponentPropsWithRef<'input'>, 'onChange'> & {
 	value: string;
 	label: string;
 	onChange: (value: string) => void;

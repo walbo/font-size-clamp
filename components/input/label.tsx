@@ -1,15 +1,26 @@
 /**
+ * External dependencies
+ */
+import type {
+	ComponentPropsWithoutRef,
+	ReactNode,
+	FunctionComponent,
+} from 'react';
+
+/**
  * Internal dependencies
  */
 import { Label as BaseLabel } from './styles/input-control-styles';
 
-export type LabelProps = React.ComponentPropsWithoutRef<'label'>;
+export type LabelProps = ComponentPropsWithoutRef<'label'> & {
+	children: ReactNode;
+};
 
-const Label: React.FC<LabelProps> = ({ children, htmlFor, ...props }) => {
-	if (!children) {
-		return null;
-	}
-
+const Label: FunctionComponent<LabelProps> = ({
+	children,
+	htmlFor,
+	...props
+}) => {
 	return (
 		<BaseLabel htmlFor={htmlFor} {...props}>
 			{children}

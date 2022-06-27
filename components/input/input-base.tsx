@@ -2,6 +2,7 @@
  * External dependencies
  */
 import { forwardRef } from 'react';
+import type { ReactNode } from 'react';
 
 /**
  * Internal dependencies
@@ -20,8 +21,8 @@ type InputBaseProps = RootProps & {
 	isFocused: boolean;
 	id?: string;
 	label: string;
-	suffix?: React.ReactNode;
-	children?: React.ReactNode;
+	suffix?: ReactNode;
+	children?: ReactNode;
 };
 
 const ForwardedInputBase = forwardRef<HTMLDivElement, InputBaseProps>(

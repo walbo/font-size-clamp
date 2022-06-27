@@ -2,16 +2,14 @@
  * External dependencies
  */
 import { forwardRef } from 'react';
+import type { ComponentPropsWithRef, ChangeEvent } from 'react';
 
 /**
  * Internal dependencies
  */
 import { Input } from './styles/input-control-styles';
 
-type InputFieldProps = Omit<
-	React.ComponentPropsWithoutRef<'input'>,
-	'onChange'
-> & {
+type InputFieldProps = Omit<ComponentPropsWithRef<'input'>, 'onChange'> & {
 	setIsFocused: (isFocused: boolean) => void;
 	onChange?: (value: string) => void;
 	unit: string;
@@ -30,7 +28,7 @@ const ForwardedInputField = forwardRef<HTMLInputElement, InputFieldProps>(
 			setIsFocused(true);
 		};
 
-		const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
 			const nextValue = event.target.value;
 			onChange(`${nextValue}${unit}`);
 		};

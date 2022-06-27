@@ -7,3 +7,4 @@ public/robots.txt
 public/sitemap*.xml
 test-results/
 playwright-report/
+tsconfig.tsbuildinfo

@@ -3,6 +3,7 @@
  */
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import type { FunctionComponent, ReactNode } from 'react';
 
 /**
  * Internal dependencies
@@ -76,9 +77,10 @@ const BaseLabel = styled(Text)`
 	padding-bottom: 0.5rem;
 `;
 
-export const Label: React.FC<{ htmlFor?: string }> = (props) => (
-	<BaseLabel variant="label" {...props} as="label" />
-);
+export const Label: FunctionComponent<{
+	htmlFor?: string;
+	children: ReactNode;
+}> = (props) => <BaseLabel variant="label" {...props} as="label" />;
 
 export const LabelWrapper = styled(FlexItem)`
 	max-width: calc(100% - 10px);

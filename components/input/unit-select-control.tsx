@@ -1,4 +1,9 @@
 /**
+ * External dependencies
+ */
+import type { ChangeEvent } from 'react';
+
+/**
  * Internal dependencies
  */
 import { UnitSelect } from './styles/unit-control-styles';
@@ -11,7 +16,7 @@ function UnitSelectControl({
 	onChange: (unitValue: string) => void;
 	value: string | undefined;
 }): JSX.Element {
-	const handleOnChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+	const handleOnChange = (event: ChangeEvent<HTMLSelectElement>) => {
 		const { value: unitValue } = event.target;
 		onChange(unitValue);
 	};

@@ -63,7 +63,7 @@ jobs:
                   set -o pipefail
                   mkdir -p ./lighthouse
                   echo ${{ github.event.number }} | tee ./lighthouse/number
-                  echo ${{ steps.format_lighthouse_score.outputs.comment }} |& tee ./lighthouse/result
+                  echo "${{ steps.format_lighthouse_score.outputs.comment }}" |& tee ./lighthouse/result
 
             - uses: actions/upload-artifact@v2
               if: ${{ github.event_name == 'pull_request' && (success() || failure()) }}

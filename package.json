@@ -23,7 +23,7 @@
 		"react-dom": "18.2.0"
 	},
 	"devDependencies": {
-		"@babel/core": "7.19.0",
+		"@babel/core": "7.19.1",
 		"@playwright/test": "^1.25.2",
 		"@types/react": "18.0.20",
 		"@typescript-eslint/eslint-plugin": "5.37.0",

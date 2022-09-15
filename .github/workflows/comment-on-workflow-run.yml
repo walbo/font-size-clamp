@@ -1,0 +1,31 @@
+name: Comment on Workflow Run
+
+on:
+    workflow_run:
+        workflows:
+            - 'Lighthouse Report'
+        types:
+            - completed
+
+jobs:
+    comment:
+        runs-on: ubuntu-latest
+        if: ${{ github.event.workflow_run.event == 'pull_request' }}
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                  fetch-depth: 1
+
+            - name: Artifact
+              id: artifact
+              uses: marocchino/on_artifact@v1
+              with:
+                  name: lighthouse
+
+            - name: Add Lighthouse stats as comment
+              id: comment_to_pr
+              uses: marocchino/sticky-pull-request-comment@v2.2.0
+              with:
+                  number: ${{ steps.artifact.outputs.number }}
+                  header: lighthouse
+                  message: ${{ steps.artifact.outputs.lighthouse }}

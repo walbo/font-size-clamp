@@ -65,7 +65,7 @@ jobs:
                   echo ${{ github.event.number }} | tee ./lighthouse/number
                   echo "${{ steps.format_lighthouse_score.outputs.comment }}" |& tee ./lighthouse/result
 
-            - uses: actions/upload-artifact@v2
+            - uses: actions/upload-artifact@v3
               if: ${{ github.event_name == 'pull_request' && (success() || failure()) }}
               with:
                   name: lighthouse

@@ -24,7 +24,7 @@ jobs:
 
             - name: Add Lighthouse stats as comment
               id: comment_to_pr
-              uses: marocchino/sticky-pull-request-comment@v2.2.0
+              uses: marocchino/sticky-pull-request-comment@v2.2.1
               with:
                   number: ${{ steps.artifact.outputs.number }}
                   header: lighthouse

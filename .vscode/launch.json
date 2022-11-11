@@ -8,7 +8,7 @@
 			"cwd": "${workspaceFolder}",
 			"console": "integratedTerminal",
 			"runtimeExecutable": "npm",
-			"runtimeArgs": ["run-script", "start"],
+			"runtimeArgs": ["run-script", "dev"],
 			"skipFiles": ["<node_internals>/**"]
 		}
 	]

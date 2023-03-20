@@ -34,7 +34,7 @@
 		"eslint-plugin-react": "7.32.2",
 		"next-pwa": "5.6.0",
 		"next-sitemap": "3.1.52",
-		"prettier": "2.8.4",
+		"prettier": "2.8.5",
 		"serve": "14.2.0",
 		"typescript": "5.0.2"
 	}

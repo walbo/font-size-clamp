@@ -12,7 +12,6 @@ import Input from '@components/input';
 import Flex, { FlexBlock } from '@components/flex';
 import Text from '@components/text';
 import Code from '@components/code';
-import Ad from '@components/ad';
 import clampBuilder from '@utils/clamp-builder';
 import { hasSameKeys } from '@utils/objects';
 
@@ -187,8 +186,6 @@ export default function Home(): JSX.Element {
 						</Settings>
 
 						<Code code={clamp ? `font-size: ${clamp};` : ' '} />
-
-						<Ad />
 					</main>
 				</FlexBlock>
 			</App>

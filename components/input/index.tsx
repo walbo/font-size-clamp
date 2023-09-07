@@ -26,6 +26,12 @@ const ForwardedInputControl = forwardRef<HTMLInputElement, InputControlProps>(
 		const inputSuffix = (
 			<UnitSelectControl
 				onChange={(newUnit) => {
+					// If the number is invalid, set it to 16px or 1rem
+					if (isNaN(Number(num)) || num === '') {
+						onChange(`${newUnit === 'px' ? '16' : '1'}${newUnit}`);
+						return;
+					}
+
 					if (unit === 'px' && newUnit === 'rem') {
 						onChange(`${parseFloat(num) / 16}${newUnit}`);
 					} else if (unit === 'rem' && newUnit === 'px') {

@@ -41,8 +41,8 @@ export default function clampBuilder(options: {
 	const slope = (maxFontSize - minFontSize) / (maxWidth - minWidth);
 	const yAxisIntersection = toFixed(-minWidth * slope + minFontSize);
 
-	const min = `${minFontSize}rem`;
-	const max = `${maxFontSize}rem`;
+	const min = `${Math.min(minFontSize, maxFontSize)}rem`;
+	const max = `${Math.max(minFontSize, maxFontSize)}rem`;
 	const preferred = `${yAxisIntersection}rem + ${toFixed(slope * 100)}vw`;
 
 	return `clamp(${min}, ${preferred}, ${max})`;

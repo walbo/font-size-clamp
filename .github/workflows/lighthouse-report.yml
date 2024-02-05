@@ -26,7 +26,7 @@ jobs:
 
             - name: Audit using Lighthouse
               id: lighthouse_audit
-              uses: treosh/lighthouse-ci-action@10.1.0
+              uses: treosh/lighthouse-ci-action@11.4.0
               env:
                   LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
               with:

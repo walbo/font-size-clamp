@@ -24,7 +24,7 @@
 	},
 	"devDependencies": {
 		"@babel/core": "7.22.15",
-		"@playwright/test": "^1.39.0",
+		"@playwright/test": "^1.41.2",
 		"@types/react": "18.2.48",
 		"@typescript-eslint/eslint-plugin": "5.59.11",
 		"@typescript-eslint/parser": "5.60.0",

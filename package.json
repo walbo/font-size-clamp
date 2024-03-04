@@ -15,7 +15,7 @@
 		"tsc": "tsc --pretty --noEmit"
 	},
 	"dependencies": {
-		"@emotion/react": "11.11.0",
+		"@emotion/react": "11.11.4",
 		"@emotion/styled": "11.10.6",
 		"copy-text-to-clipboard": "3.2.0",
 		"next": "13.3.1",

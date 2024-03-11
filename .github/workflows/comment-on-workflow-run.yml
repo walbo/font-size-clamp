@@ -18,7 +18,7 @@ jobs:
 
             - name: Artifact
               id: artifact
-              uses: marocchino/on_artifact@v1
+              uses: marocchino/on_artifact@v2
               with:
                   name: lighthouse
 
